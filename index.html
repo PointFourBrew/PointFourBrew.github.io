@@ -1,35 +1,40 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link rel="stylesheet" href="style.css">
-        
-        <title>Point Four</title>
-        
-        
-            <!-- Equation Rendering -->
-            <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-            <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
-        
-            <!-- Chart Rendering -->
-            <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script> -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    </head>
-    
-    <body>
-        <article>
-            <h1>Point Four Brewery</h1>
-            <section>
-                <p>
-                    We're building our website right now. Come back later.
-                </p>
-            </section>
-            
-        </article>
-            
-    </body>
-    
+    <link rel="stylesheet" href="style.css" />
+
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+    ></script>
+
+    <script>
+      $(function () {
+        let taps = [];
+        $.getJSON("taps.json", function (data) {
+          $.each(data.tap, function (i, f) {
+            console.log(f);
+            let item = `<li>${f.name} <i>${f.abv}%</i> <span style="color:#${f.colour}">■</span></li>`;
+            console.log(item);
+            $(item).appendTo("#taps");
+          });
+        });
+      });
+    </script>
+
+    <title>Point Four Taps</title>
+  </head>
+
+  <body>
+    <article>
+      <h1>Point Four Brewery</h1>
+      <h2>Taps @ <i>Le Gar<s>b</s>age</i></h2>
+      <section>
+        <ol id="taps"></ol>
+      </section>
+    </article>
+  </body>
 </html>

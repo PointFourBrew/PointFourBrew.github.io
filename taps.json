@@ -1,0 +1,7 @@
+{
+  "tap": [
+    { "name": "Birthday DIPA 🎂", "abv": "8.4", "colour": "bd841a" },
+    { "name": "foo-brut", "abv": "7.4", "colour": "f0efb5" },
+    { "name": "bar-kviek", "abv": "5.4", "colour": "dab700" }
+  ]
+}
